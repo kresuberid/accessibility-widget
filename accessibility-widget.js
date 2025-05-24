@@ -10,3 +10,12 @@ function toggleFeature(feature) {
     localStorage.setItem(storageKey, true);
   }
 }
+window.addEventListener('DOMContentLoaded', () => {
+  const features = ['big-font', 'high-contrast', 'no-animation', 'seizureSafe', 'visionImpaired', 'adhd', 'cognitive', 'keyboardNav', 'screenReader'];
+  features.forEach((f) => {
+    const key = 'kresuber-' + f;
+    if (localStorage.getItem(key)) {
+      document.body.classList.add(key);
+    }
+  });
+});
